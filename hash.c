@@ -12,7 +12,7 @@ struct Employee {
 
 struct HashTable {
     struct Employee data;
-    int flag; // 0 = Empty, 1 = Occupied
+    int flag;
 };
 
 
@@ -41,7 +41,7 @@ void insert(int key, char *name) {
 
     while (ht[index].flag == 1) {
         printf("Collision detected at address %02d. Probing next...\n", index);
-        index = (index + 1) % m; // Wrap around if we reach the end
+        index = (index + 1) % m; 
     }
 
 
@@ -63,9 +63,6 @@ void display() {
     for (i = 0; i < m; i++) {
         if (ht[i].flag == 1) {
             printf("%02d\t%d\t%s\n", i, ht[i].data.id, ht[i].data.name);
-        } else {
-            // Optional: Print empty slots or skip them
-            // printf("%02d\t----\t----\n", i); 
         }
     }
     printf("\n");
@@ -106,4 +103,5 @@ int main() {
         }
     }
     return 0;
+
 }
