@@ -47,11 +47,11 @@ int main() {
 
 
 void insert(int value) {
-    // Check for Overflow
+
     if (rear == SIZE - 1) {
         printf("Error: Queue Overflow! Cannot insert %d.\n", value);
     } else {
-        // If queue is initially empty, set front to 0
+
         if (front == -1) {
             front = 0;
         }
