@@ -1,13 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX 5  // Maximum size of the stack
+#define MAX 5
 
-// Global variables
 int stack[MAX];
 int top = -1;
 
-// Function Prototypes
 void push(int value);
 void pop();
 void display();
@@ -45,40 +43,33 @@ int main() {
     return 0;
 }
 
-// --- Function Definitions ---
-
-// Function to Push (Add element)
 void push(int value) {
-    // Check for Stack Overflow
     if (top == MAX - 1) {
         printf("Error: Stack Overflow! Cannot push %d.\n", value);
     } else {
-        top++;              // 1. Increment top pointer
-        stack[top] = value; // 2. Add value to the stack
+        top++;           
+        stack[top] = value;
         printf("%d pushed onto the stack.\n", value);
     }
 }
 
-// Function to Pop (Remove element)
 void pop() {
-    // Check for Stack Underflow
     if (top == -1) {
         printf("Error: Stack Underflow! Stack is empty.\n");
     } else {
         printf("Popped element: %d\n", stack[top]);
-        top--; // Decrement top pointer
+        top--; 
     }
 }
 
-// Function to Display stack elements
 void display() {
     if (top == -1) {
         printf("Stack is Empty.\n");
     } else {
         printf("Stack elements: \n");
-        // Print from Top down to 0 to visualize LIFO
         for (int i = top; i >= 0; i--) {
             printf("%d\n", stack[i]);
         }
     }
+
 }
